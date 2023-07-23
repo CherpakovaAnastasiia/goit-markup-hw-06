@@ -31,12 +31,33 @@ body {
     color: var(--slate);
     background-color: #FFFFFF;
 }
+
+/*----------------MOBILE---------------*/
+
+.container {
+    max-width: 428px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+
+/*----------------TABLET---------------*/
+
+@media screen and (min-width: 768px) {
+    .container {
+    min-width: 768px;}
+}
+
+/*----------------DESKTOP---------------*/
+
+@media screen and (min-width: 1158px) {
 .container {
     max-width: 1158px;
     padding-left: 15px;
     padding-right: 15px;
     margin: 0 auto;
     outline: 2px solid red;
+}
 }
 
 .visually-hidden {
@@ -107,6 +128,7 @@ body {
     display: flex;
     gap: 40px;
     margin-left: auto;
+    display: none;
 }
 
 .header-navigation {
@@ -119,6 +141,7 @@ body {
 .header-address {
     display: flex;
     gap: 40px;
+    display: none;
 }
 
 .header-list-link {
