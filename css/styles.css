@@ -45,7 +45,8 @@ body {
 
 @media screen and (min-width: 768px) {
     .container {
-    min-width: 768px;}
+    max-width: 768px;
+}
 }
 
 /*----------------DESKTOP---------------*/
@@ -55,8 +56,7 @@ body {
     max-width: 1158px;
     padding-left: 15px;
     padding-right: 15px;
-    margin: 0 auto;
-    outline: 2px solid red;
+    /* margin: 0 auto; */
 }
 }
 
@@ -121,11 +121,12 @@ body {
 .header-container {
     display: flex;
     align-items: center;
-    gap: 300px;
+    justify-content: space-between;
+    /* gap: 300px; */
 }
 
 .header-list {
-    display: flex;
+    /* display: flex; */
     gap: 40px;
     margin-left: auto;
     display: none;
@@ -138,8 +139,18 @@ body {
     align-items: center;
 }
 
+.menu-open-btn {
+    color: var(--navyblue);
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    line-height: 0;
+    width: 28px;
+    height: 22px;
+}
+
 .header-address {
-    display: flex;
+    /* display: flex; */
     gap: 40px;
     display: none;
 }
@@ -194,6 +205,66 @@ body {
 .header-addresse-link:hover,
 .header-addresse-link:focus {
     color: #404bbf;
+}
+
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--white);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.mobile-menu.is-open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.menu-container {
+    position: relative;
+}
+
+.menu-close-btn {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    background-color: transparent;
+    padding: 0;line-height: 0;
+    border-radius: 50%;
+    border: 1px solid #e7e9fc;
+    width: 24px;
+    height: 24px;
+    stroke: var(--navyblue);
+}
+
+@media screen and (min-width: 768px) {
+    .header-list {
+        display: block;
+        display: flex;
+    }
+
+    .menu-open-btn {
+        display: none;
+    }
+
+    .header-address {
+        display: block;
+    }
+
+    .mobile-menu {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 1158px) {
+    .header-address {
+        display: flex;
+    }
 }
 
 /*---------------HERO--------------*/
